@@ -1,13 +1,16 @@
 .page-wrapper{
-
+  background-color: #a4a4a4;
+  width: 100%;
 }
 
 .input-section {
-
+  padding: 30px;
+  text-align: center;
 }
 
 .registration-number-field{
-
+  width:30%;
+  height: 30px;
 }
 
 .button{
@@ -15,14 +18,22 @@
 }
 
 .output-section{
-
+  border-top: 5px solid #526589;
+  background-color: #e4e4e4;
 }
-.output-section ul{
-
+.output-section ul li{
+  list-style: none;
+  margin: 10px;
 }
-.output-section.ul li{
 
+.registration_list {
+  padding:20px;
 }
-.output-section.ul.li span{
-
+.registration_list li {
+  padding: 15px;
+  border-radius: 18px;
+  border: 3px solid black;
+  width: 90px;
+  height: auto;
+  background-color: yellow;
 }
