@@ -14,20 +14,28 @@
         <input type="text"class="registration-number-field" name="registration-number-field" value="" placeholder="Enter Registration Number">
         <button type="button" class="add-button" name="add-button">Add</button><!--Add Button-->
       </div><!--End of input-section-->
-      <div class="dropdown">
-        <button onclick="myFunction();" class="dropbtn">Filter</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Cape Town</a>
-          <a href="#">Bellville</a>
-          <a href="#">Paarl</a>
-          <a href="#">Malmesbury</a>
-        </div>
+      <div class="filter-section">
+        <select name="location">
+          <option value="all">All</option>
+          <option value="bellville">Bellville</option>
+          <option value="capetown">Cape Town</option>
+          <option value="paarl">Paarl</option>
+        </select>
       </div>
+      <!-- <div class="dropdown">
+        <button align="center-block" onclick="dropdownVisibility();" class="dropbtn">Filter</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#" onclick="fromWhere();">Cape Town</a>
+          <a href="#" >Bellville</a>
+          <a href="#">Paarl</a>
+          <a href="#">All</a>
+        </div>
+      </div> -->
       <div class="output-section">
-          <ul class="registration_list">
+          <ul  id="my-list" class="registration_list">
           </ul><!--End of registration_list-->
       </div><!--End of output-section-->
     </div><!--End of page-wrapper-->
   </body>
-      <script src="js/regFactoryFunction.js" charset="utf-8"></script><!--Linking JavaScript to index-->
+      <script src="js/RegistrationFactoryFunction.js" charset="utf-8"></script><!--Linking JavaScript to index-->
 </html>
