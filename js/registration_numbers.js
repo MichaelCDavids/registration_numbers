@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',function(){
   applyFilterBtn.addEventListener('click',function(){
     document.getElementById('my-list').innerHTML = "";
     var location = filterOption.value;
-    var locations = ["CA ","CJ","CY","CF","CAW","GP","CK",];
+    var locations = ["CA ","CJ","CY","CF","CAW","GP","CK","CL"];
     var allRegistrations = regObj.lister();
 
     var result = false;
