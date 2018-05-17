@@ -15,6 +15,18 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   });
 
+  function validate(){
+    var regNumEntered = document.getElementById('regNumber').value;
+    var allowedCharacters = /^[\w ]+$/;
+    if(regNumEntered.match(allowedCharacters)){
+      return true;
+    }else{
+      alert("please enter a valid reg number");
+      regNumber.focus();
+      return false
+    }
+  }
+
   function enterReg(enteredRegNumber){
     var newListItem = document.createElement('li');
     var list = document.getElementById("my-list");
@@ -25,9 +37,12 @@ document.addEventListener('DOMContentLoaded',function(){
 
   addBtn.addEventListener('click',function(){
     var enteredRegNumber = input.value;
-    regObj.addReg(enteredRegNumber);
-    enterReg(enteredRegNumber);
-    localStorage.setItem('registrations', JSON.stringify(regObj.theMap()));
+    var isNotInList = !(enteredRegNumber in regObj.theMap())
+    if(validate() && isNotInList){
+      regObj.addReg(enteredRegNumber);
+      enterReg(enteredRegNumber);
+      localStorage.setItem('registrations', JSON.stringify(regObj.theMap()));
+    }
     input.value = "";
   });
 
@@ -35,7 +50,7 @@ document.addEventListener('DOMContentLoaded',function(){
   applyFilterBtn.addEventListener('click',function(){
     document.getElementById('my-list').innerHTML = "";
     var location = filterOption.value;
-    var locations = ["CA","CJ","CY","CF","GP","CK",];
+    var locations = ["CA ","CJ","CY","CF","CAW","GP","CK",];
     var allRegistrations = regObj.lister();
 
     var result = false;
