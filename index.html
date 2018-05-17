@@ -11,15 +11,18 @@
   <body>
     <div class="page-wrapper">
       <div class="input-section">
-        <input type="text"class="registration-number-field" name="registration-number-field" value="" placeholder="Enter Registration Number">
-        <button type="button" class="add-button" name="add-button">Add</button><!--Add Button-->
+        <input id="regNumber" type="text" maxlength="10" class="registration-number-field" name="registration-number-field"  placeholder="Enter Registration Number" title="please enter an alphanumeric registration number for e.g(CA 123 456)">
+        <button type="button" class="add-button" class="add-button">Add</button><!--Add Button-->
       </div><!--End of input-section-->
       <div class="filter-section">
         <select id="select-filter" name="location">
           <option value="all">All</option>
           <option value="CY">Bellville</option>
-          <option value="CA">Cape Town</option>
+          <option value="CA ">Cape Town</option>
           <option value="CJ">Paarl</option>
+          <option value="CAW">George</option>
+          <option value="GP">Gauteng</option>
+          <option value="CL">Stellenbosch</option>
         </select>
         <button type="button" id="apply-filter" name="apply-filter">Apply</button><!--Add Button-->
       </div>
