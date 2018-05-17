@@ -11,7 +11,7 @@
   <body>
     <div class="page-wrapper">
       <div class="input-section">
-        <input id="regNumber" type="text" maxlength="10" class="registration-number-field" name="registration-number-field"  placeholder="Enter Registration Number" title="please enter an alphanumeric registration number for e.g(CA 123 456)">
+        <input id="regNumber" type="text" maxlength="11" class="registration-number-field" name="registration-number-field"  placeholder="Enter Registration Number" title="please enter an alphanumeric registration number for e.g(CA 123 456)">
         <button type="button" class="add-button" class="add-button">Add</button><!--Add Button-->
       </div><!--End of input-section-->
       <div class="filter-section">
@@ -19,22 +19,13 @@
           <option value="all">All</option>
           <option value="CY">Bellville</option>
           <option value="CA ">Cape Town</option>
-          <option value="CJ">Paarl</option>
-          <option value="CAW">George</option>
           <option value="GP">Gauteng</option>
+          <option value="CAW">George</option>
+          <option value="CJ">Paarl</option>
           <option value="CL">Stellenbosch</option>
         </select>
         <button type="button" id="apply-filter" name="apply-filter">Apply</button><!--Add Button-->
       </div>
-      <!-- <div class="dropdown">
-        <button align="center-block" onclick="dropdownVisibility();" class="dropbtn">Filter</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#" onclick="fromWhere();">Cape Town</a>
-          <a href="#" >Bellville</a>
-          <a href="#">Paarl</a>
-          <a href="#">All</a>
-        </div>
-      </div> -->
       <div class="output-section">
           <ul  id="my-list" class="registration_list">
           </ul><!--End of registration_list-->
