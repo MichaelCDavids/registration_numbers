@@ -39,9 +39,7 @@ document.addEventListener('DOMContentLoaded',function(){
   addBtn.addEventListener('click',function(){
     var enteredRegNumber = input.value;
     var isNotInMap = !(enteredRegNumber.toUpperCase() in regObj.theMap());
-    if(isNotInMap){
-      return
-    }else{
+    if(!isNotInMap){
       alert("Error : Trying to add duplicate!");
     }
     var startString = enteredRegNumber.substring(0,3);
