@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   function validate(){
     var regNumEntered = document.getElementById('regNumber').value;
+    var regNumEntered = regNumEntered.toUpperCase();
     var allowedCharacters = /^[\w ]+$/;
     if(regNumEntered.match(allowedCharacters)){
       return true;
@@ -30,14 +31,14 @@ document.addEventListener('DOMContentLoaded',function(){
   function enterReg(enteredRegNumber){
     var newListItem = document.createElement('li');
     var list = document.getElementById("my-list");
-    newListItem.textContent = enteredRegNumber;
+    newListItem.textContent = enteredRegNumber.toUpperCase();
     output.appendChild(newListItem);
     list.insertBefore(newListItem, list.childNodes[0]);
   }
 
   addBtn.addEventListener('click',function(){
     var enteredRegNumber = input.value;
-    var isNotInMap = !(enteredRegNumber in regObj.theMap())
+    var isNotInMap = !(enteredRegNumber.toUpperCase() in regObj.theMap())
     var startString = enteredRegNumber.substring(0,3);
     var places = ["CA ","CJ ","CY ","CF ","CAW","GP ","CL ","CK "];
 
