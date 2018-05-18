@@ -37,11 +37,30 @@ document.addEventListener('DOMContentLoaded',function(){
 
   addBtn.addEventListener('click',function(){
     var enteredRegNumber = input.value;
-    var isNotInList = !(enteredRegNumber in regObj.theMap())
-    if(validate() && isNotInList){
-      regObj.addReg(enteredRegNumber);
-      enterReg(enteredRegNumber);
-      localStorage.setItem('registrations', JSON.stringify(regObj.theMap()));
+    var isNotInMap = !(enteredRegNumber in regObj.theMap())
+    var startString = enteredRegNumber.substring(0,3);
+    var places = ["CA ","CJ ","CY ","CF ","CAW","GP ","CL ","CK "];
+
+    var isInList = false;
+    for(var i = 0;i<places.length;i++){
+      if(startString.toUpperCase() === 'CA '){
+        isInList = true;
+      }
+      if(startString.toUpperCase() === 'CAW'){
+        isInList = true;
+      }
+      if(startString.toUpperCase() === places[i]){
+        isInList = true;
+      }
+    }
+    if(isInList){
+      if(validate() && isNotInMap){
+        regObj.addReg(enteredRegNumber.toUpperCase());
+        enterReg(enteredRegNumber.toUpperCase());
+        localStorage.setItem('registrations', JSON.stringify(regObj.theMap()));
+      }
+    }else{
+      alert("Error : invalid registration");
     }
     input.value = "";
   });
