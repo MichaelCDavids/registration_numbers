@@ -13,10 +13,18 @@ function RegistrationFactoryFunction(storedRegistrationNumbers){
   function filterFunction(registrationsAddedList,location){
     var filtered = [];
     for(var i = 0;i<registrationsAddedList.length;i++){
+      console.log("checking if "+registrationsAddedList[i]+" starts with "+location);
       if(registrationsAddedList[i].startsWith(location)){
         filtered.push(registrationsAddedList[i]);
       }
     }
+    for(var i = 0;i<registrationsAddedList.length;i++){
+      console.log("checking if "+registrationsAddedList[i]+" ends with "+location);
+      if(registrationsAddedList[i].endsWith(location)){
+        filtered.push(registrationsAddedList[i]);
+      }
+    }
+
     return filtered;
   }
 

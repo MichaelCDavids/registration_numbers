@@ -38,10 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   addBtn.addEventListener('click', function() {
     var enteredRegNumber = input.value;
+    var endString = enteredRegNumber.substring(enteredRegNumber.length-2,enteredRegNumber.length);
+    console.log(endString);
     var isNotInMap = !(enteredRegNumber.toUpperCase() in regObj.theMap());
     if (isNotInMap) {
       var startString = enteredRegNumber.substring(0, 3);
-      var places = ["CA ", "CJ ", "CY ", "CF ", "CAW", "GP ", "CL ", "CK "];
+      var places = ["CA ", "CJ ", "CY ", "CF ", "CAW", "CL ", "CK ","CFR", "CFM", "CEO","CEM", "CEY","CW ","WP"];
       var isInList = false;
       for (var i = 0; i < places.length; i++) {
         if (startString.toUpperCase() === 'CA ') {
@@ -50,8 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (startString.toUpperCase() === 'CAW') {
           isInList = true;
         }
+        if (startString.toUpperCase() === 'CAM') {
+          isInList = true;
+        }
+        if (startString.toUpperCase() === 'CF ') {
+          isInList = true;
+        }
+        if (startString.toUpperCase() === 'CFR') {
+          isInList = true;
+        }
+        if (startString.toUpperCase() === 'CFM') {
+          isInList = true;
+        }
         if (startString.toUpperCase() === places[i]) {
           isInList = true;
+        }
+        if(endString.toUpperCase() === 'WP'){
+           isInList = true;
         }
       }
       if (isInList) {
@@ -73,7 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
   applyFilterBtn.addEventListener('click', function() {
     document.getElementById('my-list').innerHTML = "";
     var location = filterOption.value;
-    var locations = ["CA ", "CJ", "CY", "CF", "CAW", "GP", "CL", "CK"];
+    console.log(location);
+    var locations = ["CA ", "CJ", "CY", "CF ", "CAW", "CAM", "GP", "CL", "CK","CFR", "CFM","CEM" ,"CEO", "CEY","CW","WP"];
     var allRegistrations = regObj.lister();
 
     var result = false;
